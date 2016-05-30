@@ -1,0 +1,20 @@
+{
+  "name": "webBasar",
+  "version": "1.0.0",
+  "description": "What www have to offer",
+  "main": "webBasar/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "basar",
+    "www",
+    "random"
+  ],
+  "author": "Mathieu Urstein",
+  "license": "ISC",
+  "dependencies": {
+    "chance": "^1.0.3",
+    "express": "^4.13.4"
+  }
+}

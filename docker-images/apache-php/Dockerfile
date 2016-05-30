@@ -1,6 +1,9 @@
 FROM php:5.6-apache
 COPY src/ /var/www/html/
 
+#start docker daemon
+#eval "$(docker-machine env default)"
+
 #lancer le container avec un mapping du port 80
 #de la vm vers le port 9090 de l'host
 #docker run -d -p 9090:80 php:5.6-apache
@@ -17,3 +20,14 @@ COPY src/ /var/www/html/
 
 #le container s'appelle res/apache-php
 #docker build -t res/apache-php .
+
+#docker run -d -p 9090:80 res/apache-php
+
+#location de apache
+#/etc/apache2/
+
+#configuration actuelle
+#/etc/apache2/sites-available
+
+#location des sources
+#/var/www/html/
