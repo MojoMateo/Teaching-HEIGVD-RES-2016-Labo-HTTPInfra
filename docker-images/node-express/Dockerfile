@@ -10,7 +10,7 @@ CMD ["node", "/opt/app/webBasar/bin/www"]
 #le container s'appelle res/apache-php
 #docker build -t res/node-express .
 
-#docker run -d -p 9090:7000 res/node-express
+#docker run -d -p 9090:3000 res/node-express
 
 #lancer un bash du container
 #docker exec -it nom_du_container /bin/bash
