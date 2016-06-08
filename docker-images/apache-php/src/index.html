@@ -89,10 +89,13 @@
     <section id="about" class="container content-section text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
-                <h2>À propos de ce labo </h2>
-                <p>The first objective of this lab is to get familiar with software tools that will allow us to build a complete web infrastructure. By that, we mean that we will build an environment that will allow us to serve static and dynamic content to web browsers. To do that, we will see that the apache httpd server can act both as a HTTP server and as a reverse proxy. We will also see that express.js is a JavaScript framework that makes it very easy to write dynamic web apps.</p>
-                <p>The second objective is to implement a simple, yet complete, dynamic web application. We will create HTML, CSS and JavaScript assets that will be served to the browsers and presented to the users. The JavaScript code executed in the browser will issue asynchronous HTTP requests to our web infrastructure (AJAX requests) and fetch content generated dynamically.</p>
-                <p>The third objective is to practice our usage of Docker. All the components of the web infrastructure will be packaged in custom Docker images (we will create at least 3 different images).</p>
+                <h2>À propos de <span id="personName"></span></h2>
+                <p>
+                    <img id="personAvatar" src=""/>
+                </p>
+                <p>
+                    <img id="personImage" src=""/>
+                </p>
             </div>
         </div>
     </section>
@@ -151,6 +154,19 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="js/grayscale.js"></script>
+
+    <!-- Mon script -->
+    <script>
+        $(function() {
+            $.getJSON( "api/students/json/", function( data ) {
+                console.log(data);
+
+                $('#personName').text(data.name+' ('+data.age+')');
+                $('#personAvatar').attr("src", data.avatar);
+                $('#personImage').attr("src", data.favImage);
+            });
+        });
+    </script>
 
 </body>
 

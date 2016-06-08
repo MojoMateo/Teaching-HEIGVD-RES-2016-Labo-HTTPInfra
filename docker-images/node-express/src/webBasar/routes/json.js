@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     jsonRes.name = chance.name();
     jsonRes.age = chance.age();
     jsonRes.avatar = chance.avatar();
-    jsonRes.favImage = "http://lorempixel.com/400/200/"+chance.word();
+    jsonRes.favImage = "http://loremflickr.com/800/600/"+chance.word();
     res.json(jsonRes);
 });
 
