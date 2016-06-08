@@ -27,9 +27,16 @@ RUN a2ensite 000-* 001-*
 
 #start the reverse proxy
     #docker build -t res/apache-reverse-proxy .
-    #docker run -p 8080:80 res/apache-reverse-proxy
+    #docker run --name apache-reverse-proxy -p 8080:80 res/apache-reverse-proxy
 
 ##########################################################
+
+#connecter le browser
+    #demo.res.ch
+    #http://demo.res.ch:8080/api/students/json
+
+##########################################################
+
 #activer un site
     #a2ensite xxx
 
