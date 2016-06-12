@@ -1,5 +1,6 @@
 FROM php:5.6-apache
 
+COPY apache2-foreground /usr/local/bin
 COPY config/ /etc/apache2
 
 RUN a2enmod proxy proxy_http

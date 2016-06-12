@@ -157,7 +157,7 @@
 
     <!-- Mon script -->
     <script>
-        $(function() {
+        setInterval(function() {
             $.getJSON( "api/students/json/", function( data ) {
                 console.log(data);
 
@@ -165,7 +165,7 @@
                 $('#personAvatar').attr("src", data.avatar);
                 $('#personImage').attr("src", data.favImage);
             });
-        });
+        }, 5000);
     </script>
 
 </body>
