@@ -1,6 +1,7 @@
 FROM php:5.6-apache
 
 COPY apache2-foreground /usr/local/bin
+COPY templates /var/apache2/templates
 COPY config/ /etc/apache2
 
 RUN a2enmod proxy proxy_http
@@ -28,7 +29,7 @@ RUN a2ensite 000-* 001-*
 
 #start the reverse proxy
     #docker build -t res/apache-reverse-proxy .
-    #docker run --name apache-reverse-proxy -p 8080:80 res/apache-reverse-proxy
+    #docker run -e STATIC_APP=172.17.0.2:80 -e DYNAMIC_APP=172.17.0.3:3000 --name apache-reverse-proxy  -p 8080:80 res/apache-reverse-proxy
 
 ##########################################################
 
